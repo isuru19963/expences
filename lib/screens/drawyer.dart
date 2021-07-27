@@ -61,9 +61,9 @@ class MainDrawerState extends State<MainDrawer> {
                     image: DecorationImage(image: NetworkImage('https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg'),fit: BoxFit.cover),
                   ),
                 ),
-                Text(name.toString(),
-                  style: TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
+                // Text(name.toString(),
+                //   style: TextStyle(fontSize: 20.0, color: Colors.white),
+                // ),
                 Text(mail.toString(),
                   style: TextStyle(color: Colors.white),
                 ),
@@ -104,30 +104,30 @@ class MainDrawerState extends State<MainDrawer> {
               ))
             },
           ),
-          ListTile(
-            leading: Icon(Icons.monetization_on_sharp),
-            title: Text("Report",
-              style: TextStyle(fontSize: 16),),
-            onTap: () => {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_){
-                    // return outStanding();
-                  }
-              ))
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.add_shopping_cart),
-            title: Text("Account",
-              style: TextStyle(fontSize: 16),),
-            onTap: () => {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_){
-                    return accountDetails();
-                  }
-              ))
-            },
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.monetization_on_sharp),
+          //   title: Text("Report",
+          //     style: TextStyle(fontSize: 16),),
+          //   onTap: () => {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (_){
+          //           // return outStanding();
+          //         }
+          //     ))
+          //   },
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.add_shopping_cart),
+          //   title: Text("Account",
+          //     style: TextStyle(fontSize: 16),),
+          //   onTap: () => {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: (_){
+          //           return accountDetails();
+          //         }
+          //     ))
+          //   },
+          // ),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text("Logout",

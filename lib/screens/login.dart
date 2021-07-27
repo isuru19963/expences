@@ -4,6 +4,7 @@
 import 'package:Expense/screens/api.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:http/http.dart' as http;
 // import 'package:shared_preferences/shared_preferences.dart';
 //material import ends
@@ -100,6 +101,22 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         if(rsp['code'] == 500){
           mes = rsp;
+          return showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text('Ops.. !'),
+                  content: Text('User Not Found'),
+                  actions: <Widget>[
+                    new FlatButton(
+                      child: new Text('OK'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    )
+                  ],
+                );
+              });
         } else {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (_){
@@ -162,9 +179,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           try{
                             loginFetch();
                           }catch(e){
-                            setState(() {
-                              mes = e.toString();
-                            });
+                            Fluttertoast.showToast(
+                                msg: 'Message Saved on Draft!',
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                backgroundColor: Colors.lightBlue,
+                                textColor: Colors.white
+                            );
+                            print('errrr');
+                            // setState(() {
+                            //   mes = e.toString();
+                            // });
                         }
                         } else {
                           print("Fields are empty");
@@ -222,16 +247,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Image.asset("assest/plogo.png", width: 100.0,),
                 ),
               ),
-              Container(
-                child: Center(
-                  child: Text(mes == null ? "" : mes.toString()),
-                )
-                ),
-              Container(
-                  child: Center(
-                    child: Text(testi == null ? "" : testi.toString()),
-                  )
-              ),
+              // Container(
+              //   child: Center(
+              //     child: Text(mes == null ? "error" : mes.toString()),
+              //   )
+              //   ),
+              // Container(
+              //     child: Center(
+              //       child: Text(testi == null ? "" : testi.toString()),
+              //     )
+              // ),
               //footer image - peercore logo - ends
             ],
           ),

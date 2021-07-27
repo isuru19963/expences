@@ -100,6 +100,9 @@ class _userRegisterState extends State<userRegister> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: Padding(
         padding: EdgeInsets.all(20.0),
         child: Container(

@@ -267,9 +267,9 @@ class _mainDashboardState extends State<mainDashboard> {
                         IconButton(
                           icon: Icon(Icons.account_circle_rounded, color: Colors.blue),
                           onPressed: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                              return accountDetails();
-                            }));
+                            // Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                            //   return accountDetails();
+                            // }));
                           },
                         )
                       ],

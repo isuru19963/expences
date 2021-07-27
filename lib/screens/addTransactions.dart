@@ -229,10 +229,10 @@ class addTransactionState extends State<addTransaction> {
                       });
                     },
                     onChanged: (value){
-                      setState(() {
-                        gst = (double.parse(value)) / 11;
-                        print(gst);
-                      });
+                      // setState(() {
+                      //   gst = (double.parse(value)) / 11;
+                      //   print(gst);
+                      // });
 
                       updateAmount();
                       updateDate(format.format(DateTime.now()));
